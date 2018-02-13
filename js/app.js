@@ -9,10 +9,17 @@ var pike = {
   avg:6.3,
   customersPerHour:[],
   cookiesPerHour:[],
+  totalCustomers:0,
+  totalCookies:0,
   makeCustomers: function(){
     for(var i = 0; i < storeHours.length; i++){
       this.customersPerHour.push(Math.floor(Math.random() * (65 - 23) + 23));
-      this.cookiesPerHour.push(this.customersPerHour[i] * 6.3);
+      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * 6.3));
+      this.totalCustomers = this.customersPerHour[i] + this.totalCustomers;
+      this.totalCookies = this.cookiesPerHour[i] + this.totalCookies;
     }
   }
+  //  render: function(){
+     
+   } 
 };
